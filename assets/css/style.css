@@ -1,0 +1,29 @@
+/*body {background-image: url("images/viking-ship.jpg");
+	size: contain;
+}*/
+
+header {background-color: lightgrey;
+	border: solid;
+	padding: 30px;
+}
+
+
+
+}
+
+h1 {text-align: center;
+	font-size: 50px;
+	
+}
+
+#timer {text-align: center;
+	font-size: 30px;
+}
+
+#game {margin-top: 40px;
+	padding: 5px;
+	border: solid;
+	font-size: 15px;
+	background-color: white;
+
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="assets/javascript/trivia.js"></script>
+	 -->	
+	
+	<title>Trivia Game</title>
+
+
+</head>
+
+<body>
+
+	
+	<header>
+		<h1>How Much Do You Know About Vikings?</h1>
+	</header>
+
+	<div id="timer"></div>
+	
+	<div class="container">
+		<div class="row">
+			<div id="game" class="col-md-6">
+				<div class="col-md-6">
+					<p>1. First question goes here.</p>
+						<form class="answer" action="">
+  							<input class="correct" type="radio" name="answer" value="true">yes<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no
+						</form><br>
+					<p>2. Second question goes here.</p>
+						<form class="answer" action="">
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="correct" type="radio" name="answer" value="true">yes
+						</form>
+						<br>
+					<p>3. Third question goes here.</p>
+						<form class="answer" action="">
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="correct" type="radio" name="answer" value="true">yes<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no
+						</form>
+						<br>
+				</div>
+				<div class="col-md-6">
+					<p>4. Forth question goes here.</p>
+						<form action="">
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="correct" type="radio" name="answer" value="true">yes<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no
+						</form><br>
+					<p>5. Fifth question goes here.</p>
+						<form class="answer" action="">
+  							<input class="correct" type="radio" name="answer" value="true">yes<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no<br>
+  							<input class="incorrect" type="radio" name="answer" value="false">no
+						</form><br>
+					<button id="button" class="btn btn-default btn-lg normal-button">Get My Score</button>
+				
+
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+<div id="myModal" class="modal">
+	<div class="modal-content">
+    	<span class="close">&times;</span>
+    	<p>This is where the score goes.</p>
+  	</div>
+
+</div>
+
+<footer></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+
+var number = 45;
+var intervalId;
+var correct = 0;
+var incorrect = 0;
+var timerRunning = false;
+var modal = $("#myModal");
+var button = $("#button");
+var span = $(".close")
+
+
+function startGame() {
+	intervalId = setInterval(decrement, 1000);
+}
+
+function decrement() {
+	number--;
+	$("#timer").html("Time Left: " + number);
+	console.log("start");
+
+	if (number === 0) {
+		stop();
+		alert("Times up!");
+	}
+}
+
+function stop() {
+	clearInterval(intervalId);
+}
+
+startGame();
+
+$(".correct").on("click",function() {
+	correct++;
+	console.log("clicked right");
+});
+
+$(".incorrect").on("click",function() {
+	incorrect++;
+	console.log("clicked wrong");
+});
+
+$("#button").on("click",function() {
+	stop()
+	$("#myModal").modal("show")
+});
+
+//$(".close").on("click", function() {
+//	modal.style.display = "none";
+//});
+
+
+
+</script>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+

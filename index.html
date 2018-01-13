@@ -22,6 +22,7 @@
 	
 	<header>
 		<h1>How Much Do You Know About Vikings?</h1>
+		<button id="playAgain" class="btn btn-default btn-lg normal-button">Play</button>
 	</header>
 
 	<div id="timer"></div>
@@ -64,8 +65,9 @@
   							<input class="incorrect" type="radio" name="answer" value="false">no<br>
   							<input class="incorrect" type="radio" name="answer" value="false">no
 						</form><br>
-					<button id="button" class="btn btn-default btn-lg normal-button">Get My Score</button>
-				
+				<div id="scoreBtn">	
+					<button id="button" class="btn btn-default btn-lg normal-button">Submit</button>
+				</div>
 
 				</div>
 				
@@ -94,9 +96,11 @@ var intervalId;
 var correct = 0;
 var incorrect = 0;
 var timerRunning = false;
-var modal = $("#myModal");
-var button = $("#button");
-var span = $(".close")
+var score;
+
+//var modal = $("#myModal");
+//var button = $("#button");
+//var span = $(".close")
 
 
 function startGame() {
@@ -105,12 +109,12 @@ function startGame() {
 
 function decrement() {
 	number--;
-	$("#timer").html("Time Left: " + number);
+	$("#timer").html("Time Left: " + number + " seconds");
 	console.log("start");
 
 	if (number === 0) {
 		stop();
-		alert("Times up!");
+		alert("Times up! Better luck next time!");
 	}
 }
 
@@ -131,15 +135,29 @@ $(".incorrect").on("click",function() {
 });
 
 $("#button").on("click",function() {
-	stop()
-	$("#myModal").modal("show")
+	stop();
+	console.log("button works");
+
+	if (incorrect <= 2 && correct >= 3) {
+		$("#game").html("Congradulations! You won!");
+
+	}else {
+		$("#game").html("Sorry, you lost! Better luck next time!");
+
+	};
+
+  });
+
+/*$("#playAgain").on("click", function(){
+		startGame();
+		console.log("button clicked");
 });
-
-//$(".close").on("click", function() {
-//	modal.style.display = "none";
-//});
+*/
+	//$("#modalContent").modal();
 
 
+//$("#myModal").html("Correct: " + correct);
+//$("#myModal").html("Incorrect: " + incorrect);
 
 </script>
 

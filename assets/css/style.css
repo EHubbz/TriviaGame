@@ -1,19 +1,16 @@
-/*body {background-image: url("images/viking-ship.jpg");
-	size: contain;
-}*/
+<style>
 
-header {background-color: lightgrey;
+body {background-image: url("assets/images/viking-ship.jpg");
+	size: contain;
+}
+
+header {background-color: grey;
 	border: solid;
 	padding: 30px;
+	text-align: center;
 }
 
-
-
-}
-
-h1 {text-align: center;
-	font-size: 50px;
-	
+h1 {font-size: 50px;
 }
 
 #timer {text-align: center;
@@ -25,5 +22,11 @@ h1 {text-align: center;
 	border: solid;
 	font-size: 15px;
 	background-color: white;
+}
 
+#scoreBtn {align-content: center;
+}
+
+#button {background-color: lightblue;
+	font-color: white;
 }

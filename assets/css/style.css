@@ -1,12 +1,13 @@
-<style>
 
-body {background-image: url("assets/images/viking-ship.jpg");
-	size: contain;
+
+body {background-image: url("../images/viking-ship.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+
 }
 
 header {background-color: grey;
-	border: solid;
-	padding: 30px;
+	padding: 20px;
 	text-align: center;
 }
 
@@ -19,9 +20,8 @@ h1 {font-size: 50px;
 
 #game {margin-top: 40px;
 	padding: 5px;
-	border: solid;
 	font-size: 15px;
-	background-color: white;
+	background-color: lightgrey;
 }
 
 #scoreBtn {align-content: center;

@@ -12,12 +12,8 @@ var incorrect = 0;
 var timerRunning = false;
 var score;
 
-//var modal = $("#myModal");
-//var button = $("#button");
-//var span = $(".close")
-
-
 function startGame() {
+	number = 45;
 	intervalId = setInterval(decrement, 1000);
 }
 
@@ -53,24 +49,27 @@ $("#button").on("click",function() {
 	console.log("button works");
 
 	if (incorrect <= 2 && correct >= 3) {
-		$("#game").html("You won!");
+		$("#score").modal("You lost!");
+		console.log("work");
 
 	}else {
-		$("#game").html("You lost!");
-
+		$("#score").modal("You lost!");
+		console.log("works");
 	};
 
   });
 
+
+$("#playAgain").on("click", function(){
+		stop();
+		startGame();
+		$('.answer').find('input:radio, input:checkbox').prop('checked', false);
+		console.log("button clicked");
+
+		
+});
+
 };
 
-/*$("#playAgain").on("click", function(){
-		startGame();
-		console.log("button clicked");
-});
-*/
-	//$("#modalContent").modal();
 
-
-//$("#myModal").html("Correct: " + correct);
-//$("#myModal").html("Incorrect: " + incorrect);
+	

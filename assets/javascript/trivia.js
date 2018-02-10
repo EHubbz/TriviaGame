@@ -49,11 +49,11 @@ $("#button").on("click",function() {
 	console.log("button works");
 
 	if (incorrect <= 2 && correct >= 3) {
-		$("#score").modal("You lost!");
+		$("#score").text("You lost!");
 		console.log("work");
 
 	}else {
-		$("#score").modal("You lost!");
+		$("#score").text("You lost!");
 		console.log("works");
 	};
 

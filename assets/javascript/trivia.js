@@ -36,20 +36,20 @@ startGame();
 
 $(".correct").on("click",function() {
 	correct++;
-	console.log("clicked right");
+	console.log("clicked right " + correct);
 });
 
 $(".incorrect").on("click",function() {
 	incorrect++;
-	console.log("clicked wrong");
+	console.log("clicked wrong " + incorrect);
 });
 
-$("#button").on("click",function() {
+$("#submitBtn").on("click",function() {
 	stop();
 	console.log("button works");
 
-	if (incorrect <= 2 && correct >= 3) {
-		$("#score").text("You lost!");
+	if (correct >= 3) {
+		$("#score").text("You won!");
 		console.log("work");
 
 	}else {
